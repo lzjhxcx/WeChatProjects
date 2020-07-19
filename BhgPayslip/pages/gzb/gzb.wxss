@@ -1,0 +1,173 @@
+/* page {
+  height: 100%;
+  background-size: 100% 100%;
+  background-color: white;
+  flex-direction: row;
+} */
+
+.fixedBar {
+  width: 100%;
+  height: 155rpx;
+  background: #7183D9;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.film {
+  width: 750rpx;
+  height: 45rpx;
+}
+
+.film0 {
+  color: white;
+  text-align: left;
+  padding-left: 30rpx;
+}
+
+.ng {
+  width: 750rpx;
+  height: 55rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.admolish {
+  height: 35rpx;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: whitesmoke;
+}
+.payCard{
+  width: 750rpx;
+  height: 200rpx;
+  margin-top: 155rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 25% 25%;
+  background: #7183D9;
+}
+.gzcard {
+  width: 750rpx;
+  height: 200rpx;
+  /* margin-top: 10rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bgp {
+  width: 550rpx;
+  height: 200rpx;
+  z-index: 1;
+  position: absolute;
+}
+
+.no {
+  font-size: 30rpx;
+  font-family: "宋体";
+  font-weight: bold;
+  color: white;
+  padding-right: 30rpx;
+
+}
+
+.name {
+  font-size: 40rpx;
+  font-family: "宋体";
+  font-weight: bold;
+  color: white;
+  padding-left: 30rpx;
+}
+
+.dsgz {
+  font-size: 15 rpx;
+  font-family: "宋体";
+  font-weight: bold;
+  color: black;
+  z-index: 1;
+  margin-top: 40rpx;
+}
+
+.dsgz1 {
+  font-size: 15 rpx;
+  font-family: "宋体";
+  font-weight: bold;
+  color: gray;
+  z-index: 1;
+  margin-top: 50rpx;
+}
+
+.dsgz2 {
+  font-size: 15 rpx;
+  font-family: "宋体";
+  font-weight: bold;
+  color: red;
+  z-index: 1;
+  margin-top: 50rpx;
+}
+.specific{
+  flex-direction: row;
+  display: flex;
+  width: 750rpx;
+  /* margin-top: 360rpx; */
+}
+.left {
+  flex-direction: column;
+  display: flex;
+  width: 450rpx;
+  /* margin-top: 360rpx; */
+}
+
+.right {
+  flex-direction: column;
+  display: flex;
+  width: 300rpx;
+  /* margin-top: 360rpx; */
+}
+
+.t0 {
+
+  border-bottom: 0.5px dashed rgb(231, 225, 225);
+  font-family: 宋体;
+  padding: 30rpx;
+  font-weight: bold;
+  color: black;
+}
+
+.t01 {
+
+  border-bottom: 0.5px dashed rgb(231, 225, 225);
+  font-family: 宋体;
+  padding: 30rpx;
+  font-weight: bold;
+  color: black;
+  text-align: right;
+}
+
+.t1 {
+
+  border-bottom: 0.5px dashed rgb(231, 225, 225);
+  background-color: #9D7DD2;
+  font-family: 宋体;
+  padding: 30rpx;
+  font-weight: bold;
+  color: black;
+}
+
+.t11 {
+
+  border-bottom: 0.5px dashed rgb(231, 225, 225);
+  background-color: #9D7DD2;
+  font-family: 宋体;
+  padding: 30rpx;
+  font-weight: bold;
+  color: black;
+  text-align: right;
+}

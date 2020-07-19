@@ -1,0 +1,116 @@
+<!-- 工资卡 -->
+<view class="fixedBar" style="background-color:{{}}">
+	<view class="film">
+		<text class="film0">北京华联综合超市有限公司攀枝花分公司</text>
+	</view>
+	<view class="ng">
+		<text class="name">{{gzb.name}}</text>
+		<text class="no">工号：{{gzb.employee_no}}</text>
+	</view>
+	<text class="admolish" space="true" decode="{{true}}">--------------------&nbsp;&nbsp;&nbsp;以下为保密信息，仅为本人查看&nbsp;&nbsp;&nbsp;--------------------</text>
+	</view>
+	<view class="payCard"> 
+	<view class="gzcard">
+		<image class="bgp" src="../../images/bgp.png"></image>
+		<view class="dsgz">
+			<text class="dsgz3">实发工资：</text>
+			<text class="dsgz2">￥{{gzb.sf_hj}}</text>
+		</view>
+		<text class="dsgz1">工资期间：{{gzb.yfny}}</text>
+	</view>
+</view>
+<!-- 工资详情 -->
+<view class="specific">
+<view class="left">
+	<text class="t0">基本工资：</text>
+	<text class="t0">岗位工资:</text>
+	<text class="t0">职务工资:</text>
+	<text class="t0">计算错误补发:</text>
+	<text class="t0">工作变动补发:</text>
+	<text class="t0">平时加班工资:</text>
+	<text class="t0">法定假日加班工资:</text>
+	<text class="t0">病假扣款:</text>
+	<text class="t0">事假扣款:</text>
+	<text class="t0">旷工扣款:</text>
+	<text class="t0">迟到扣款:</text>
+	<text class="t0">工龄补贴:</text>
+	<text class="t0">工作餐补贴:</text>
+	<text class="t0">交通补贴:</text>
+	<text class="t0">通讯补贴:</text>
+	<text class="t0">住房补助:</text>
+	<text class="t0">特殊岗位津贴:</text>
+	<text class="t0">经营绩效:</text>
+	<text class="t0">考核绩效:</text>
+	<text class="t0">专项绩效:</text>
+	<text class="t1" >财务应发合计:</text>
+	<text class="t0">养老(个人):</text>
+	<text class="t0">医疗(个人):</text>
+	<text class="t0">失业(个人):</text>
+	<text class="t0">住房公积金(个人):</text>
+	<text class="t0">养老补扣(个人):</text>
+	<text class="t0">医疗补扣(个人):</text>
+	<text class="t0">失业补扣(个人):</text>
+	<text class="t0">住房公积金补扣(个人):</text>
+	<text class="t0">本次扣税:</text>
+	<text class="t0">代扣款:</text>
+	<text class="t0">处罚款:</text>
+	<text class="t0">工服折旧费:</text>
+	<text class="t0">辞职未退资料扣款:</text>
+	<text class="t1">实发合计:</text>
+	<text class="t0">养老(单位):</text>
+	<text class="t0">失业(单位):</text>
+	<text class="t0">医疗(单位):</text>
+	<text class="t0">生育(单位):</text>
+	<text class="t0">工伤补扣(单位):</text>
+	<text class="t0">住房公积金补扣(单位):</text>
+	<text class="t0">发放方式:</text>
+</view>
+
+<view class="right">
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.jb_gz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gw_gz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zw_gz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.jscw_bf}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gzbd_bf}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.psjb_gz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.fdjrjb_gz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.bj_kk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.sj_kk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.kg_kk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.cd_kk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gl_bt}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gzc_bt}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.jt_bt}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.tx_bt}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zfbz}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.tsgw_jt}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.jy_jx}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.kh_jx}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zx_jx}}</text>
+	<text class="t11"  space="true" decode="{{true}}">&nbsp;￥{{gzb.cwyf_tot}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.yl_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.medical_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.unemploy_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zfgjj_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_yl_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_medical_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_unemploy_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_zfgjj_per}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.bc_ks}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.dkk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.cfk}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gfzjf}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.czwtzl_kk}}</text>
+	<text class="t11"  space="true" decode="{{true}}">&nbsp;￥{{gzb.sf_hj}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.yl_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.unemploy_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.medical_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.sy_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gs_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zfgjj_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;{{gzb.give_met}}</text>
+</view>
+</view>
+  <view class="weui-footer weui-footer_fixed-bottom" style="display:flex;flex-direction:row; justify-content:center;">
+    <view class="weui-footer_text" style="font-size:25rpx;color:gray;">Copyright ©2020 by 张江林</view>
+  </view>
