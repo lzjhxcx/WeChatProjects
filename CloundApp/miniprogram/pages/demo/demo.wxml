@@ -1,0 +1,12 @@
+<block wx:for="{{arr}}" wx:for-item="data" wx:for-index="haha" wx:key="*this">
+    <view> <checkbox/>{{haha}}:{{data}}</view>
+</block>
+<button bind:tap="arrobj">随机变化</button>
+
+<block wx:for="{{arrobe}}"  wx:key="id">
+    <view> <checkbox/>{{item.name}}</view>
+</block>
+<button bind:tap="arrobjobe">随机变化</button>
+
+<button bind:tap="getMusicInfo">获取音乐信息</button>
+<button bind:tap="getMovieInfo">获取电影信息</button>
