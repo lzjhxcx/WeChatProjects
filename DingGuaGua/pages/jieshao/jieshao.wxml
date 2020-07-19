@@ -1,0 +1,15 @@
+<text style="margin:10rpx;">服务项目：</text>
+  <view bindtouchmove="handleSetMoveViewPos">
+    <view class="move-view" style=" top:{{top}}px;left:{{left}}px;" bindtap="freeTell" catchtouchmove="handleTouchMove">
+      <image src="../../image/bohao.png"></image>
+    </view>
+  </view>
+    <view style="flex-direction:column;display:flex;align-items:center;justify-content:center;margin:10rpx;">
+      <text>《验资 增资 审计 资产评估 》</text>
+      <text>审查纳税情况；稽核应纳税额，办理税收清算；受托进行年度查账，单项专题查账，财务会计审计</text>
+      <text>《公司注册》</text>
+      <text>新公司注册，可提供收费合法的注册地址，公司转让办理，公司股权转让，公司变更注册地址，公司变更法人，公司变更股东，公司变更经营范围，公司变更名称，公司注销，税务工商注销</text>
+      <text>《代理记账》</text>
+      <text>代理记账，纳税申报，申请一般纳税人，申请税控机，申请发票，建立健全财务制度，不让您多交一分税!</text>
+      <text style="color:red;font-size:50rpx">本公司长年招收会计学员，学会计就到顶呱呱财务！</text>
+    </view>

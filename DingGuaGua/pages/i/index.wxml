@@ -1,0 +1,24 @@
+<!--index.wxml-->
+
+<view class="gy1">
+    <image src="/image/12.jpg"></image>
+</view>
+ <view class="text">
+        <view class="line_y"></view>
+        <text>关于企业</text>
+    </view> 
+
+     <view class="text2">
+        <text>
+   攀枝花顶呱呱财务咨询是最优秀的的工商代办、财务记账服务企业之一，一直以专业快捷的服务引作为行业的引领者。   
+   我们成体系的注册流程让您足不出户就能快速的注册公司，迈出梦想的第一步！
+   同时我们还能够帮您建立健全的财务制度，不让您多交一分税。
+公司地址：四川省攀枝花东区学府花园二单元14-3
+服务电话：13108124896
+</text>
+    </view> 
+
+<view class="gy">
+    <image src="/image/17.jpg"></image>
+</view>
+<button type="default" bindtap="calling">点击拨打客服电话</button>

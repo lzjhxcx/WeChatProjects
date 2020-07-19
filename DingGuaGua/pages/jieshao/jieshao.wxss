@@ -1,0 +1,9 @@
+.move-view {
+position:fixed;
+width:50%;
+justify-content:center;
+}
+.move-view image {
+width:80rpx;
+height:80rpx;
+}
