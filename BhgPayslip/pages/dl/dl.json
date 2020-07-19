@@ -1,5 +1,10 @@
 {
   "usingComponents": {},
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#D7DBE4",
+  "navigationBarTitleText": "查工资",
+  "navigationBarTextStyle": "black"
 
 }

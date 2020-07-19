@@ -2,7 +2,7 @@ page{
   height: 100%;
   background-size:100% 100%;
   background-color: blanchedalmond;
-  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584509597131&di=26fe7f2b6cadc5d8b678b3697784e575&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D1992678085%2C3307479725%26fm%3D214%26gp%3D0.jpg')
+  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595155459082&di=dcb07c0a3623f1c9942c6b8137fcbc04&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F11%2F20180911074944_Au8Ge.jpeg')
   }
  
 .container {

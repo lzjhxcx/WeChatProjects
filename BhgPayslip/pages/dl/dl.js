@@ -27,44 +27,6 @@ Page({
     
   },
   //提交按钮函数
-  // formSubmit: function (res) {
-  //   console.log(this.data.no);
-  //   console.log(this.data.pwd);
-  //   this.setData({ disabled: true });
-  //   将获取到的账号密码数据向云数据库GZB查询对比
-  //   wx.cloud.callFunction({
-  //     name: 'getGzb',
-  //     data: {
-  //       no: parseInt(this.data.no),
-  //       pwd: String(this.data.pwd)
-  //     }
-  //   })
-  //   .then((res) => {
-  //     console.log(res)
-  //     if (res.result.data.length==1) {
-  //       //账号密码无误并传值下一个页面
-  //       wx.navigateTo({
-  //         url: '../gzb/gzb?lon=' + this.data.no + '&lpwd=' + this.data.pwd,
-  //         success: function (res) { },
-  //         fail: function (res) { },
-  //         complete: function (res) { },
-  //       })
-
-
-  //     } else {
-  //       wx.showLoading({                    //提示信息
-  //         title: '工号或密码不正确'
-  //       })
-  //       setTimeout(function () {            //隐藏提示信息并初始化账号密码
-  //         wx.hideLoading()
-  //       }, 500)
-  //       this.setData({
-  //         no: null,
-  //         pwd: ""
-  //       })
-  //     }
-  //   })    
-  //     },
   formSubmit: function (res) {
     console.log(this.data.no);
     console.log(this.data.pwd);
