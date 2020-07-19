@@ -1,0 +1,74 @@
+<view wx:if="{{isHide}}">
+	<view wx:if="{{canIUse}}">
+		<view class='header'>
+			<image src='../img/微信登录.png'></image>
+		</view>
+
+		<view class='content'>
+			<view>申请获取以下权限</view>
+			<text>获得你的公开信息(昵称，头像等)，以便保存您的优惠券信息，方便使用</text>
+		</view>
+
+		<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+			授权登录
+		</button>
+		<button class='bottom' type='primary' bindtap="register1">
+			取消
+		</button>
+	</view>
+	<view wx:else>请升级微信版本</view>
+</view>
+<view wx:else>
+	<image class="background" src="../img/background.png"></image>
+	<view class="blank">
+		<view class="board1">
+			<button class="scan" style="margin-top:20rpx;" bindtap="{{avatarUrl?'getQRCode':'isRegister'}}" plain="true" hover-class="button-hover">
+				<view class="text1"> 扫一扫 </view>
+			</button>
+
+		</view>
+		<text class="my">我的电子优惠券</text>
+		<open-data>文本</open-data>
+	</view>
+
+	<view class="coupon-list">
+		<block wx:for="{{number}}">
+			<navigator url='../code/code?code={{item.coupon_no}}&depict={{item.name}}' hover-class="navigator-hover">
+				<view class="item stamp " style="background-color:{{item.color}}">
+					<!-- 左侧 -->
+					<view class="float-li t1">
+						<view class="coupon-left">
+							<view class="t t0">BHG</view>
+							<view class="t t1">￥</view>
+							<view class="t t2">{{item.money}}</view>
+							<view class="t t3">{{item.condition}}</view>
+							<!-- <view class="t t4">{{item.coupon_no}}</view> -->
+						</view>
+					</view>
+					<!-- 右侧 -->
+					<view class="float-li-rig">
+						<view class="coupon-rig">
+							<view class="t t1">{{item.name}}</view>
+							<view class="t t2">{{item.begin_time}}</view>
+							<view class="t t2">{{item.end_time}}</view>
+							<view class="t t3">
+							</view>
+						</view>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</view>
+	<image src="../img/bgp.gif" class="xhr" mode="aspectFit"></image>
+	<view class="register">
+	<view wx:if="{{avatarUrl}}">
+	<image class="register2" src="{{avatarUrl}}"></image>
+	</view>
+	<view wx:else>
+		<button class="register1" bindtap="register" plain="true" hover-class="button-hover">登录</button>
+	</view>
+	</view>
+	<view class="weui-footer weui-footer_fixed-bottom" style="position: fixed;bottom: 0rpx;justify-content: center;flex-direction: row;display: flex;align-items: center;width:750rpx;">
+		<view class="weui-footer_text" style="font-size:25rpx;color:white;">Copyright ©2020 by 信息部</view>
+	</view>
+</view>

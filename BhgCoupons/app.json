@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/myself/myself",
+    "pages/code/code"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#789777",
+    "navigationBarTitleText": "BHG优惠券",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap57.json",
+  "debug":true,
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  }
+
+  
+}
