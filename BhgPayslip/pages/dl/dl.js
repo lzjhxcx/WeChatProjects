@@ -34,7 +34,7 @@ Page({
     //将获取到的账号密码数据向云数据库GZB查询对比
     var _this = this
     wx.request({
-      url: 'https://www.lzjhxcx.club/Query.ashx',
+      url: 'https://www.lzjhxcx.club/Query',
       data: {
         employee_no: this.data.no,
         pwd: this.data.pwd
@@ -45,7 +45,7 @@ Page({
       responseType: 'text',
       success: function (res) {
         console.log(res.data)
-        if (res.data[2] === "s") {
+        if (res.data.store_no) {
         //账号密码无误并传值下一个页面
         wx.navigateTo({
           url: '../gzb/gzb?lno=' + _this.data.no + '&lpwd=' + _this.data.pwd,

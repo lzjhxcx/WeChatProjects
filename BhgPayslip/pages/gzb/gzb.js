@@ -1,8 +1,8 @@
 Page({
   data: {
     gzb: {},
-    no: 0,
-    pwd: ""
+    no:0,
+    pwd:""
   },
   //后台取数
   onLoad: function(options) {
@@ -13,7 +13,7 @@ Page({
     })
     var _this = this
     wx.request({
-      url: 'https://www.lzjhxcx.club/Query.ashx',
+      url: 'https://www.lzjhxcx.club/Query',
       data: {
         employee_no:this.data.no,
         pwd:this.data.pwd},
@@ -24,11 +24,11 @@ Page({
       success: function(res) {
         
         console.log(res.data)
-        var ja=JSON.parse(res.data)
-        console.log(ja)
+        // var ja=JSON.parse(res.data)
+        // console.log(ja)
         
         _this.setData({
-          gzb: ja
+          gzb: res.data
         })
         console.log(_this.data.gzb)
       },
