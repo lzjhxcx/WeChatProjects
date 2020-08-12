@@ -61,6 +61,12 @@
 	<text class="t0">失业(单位):</text>
 	<text class="t0">医疗(单位):</text>
 	<text class="t0">生育(单位):</text>
+	<text class="t0">工伤(单位):</text>
+	<text class="t0">住房公积金(单位):</text>
+	<text class="t0">养老补扣(单位):</text>
+	<text class="t0">失业补扣(单位):</text>
+	<text class="t0">医疗补扣(单位):</text>
+	<text class="t0">生育补扣(单位):</text>
 	<text class="t0">工伤补扣(单位):</text>
 	<text class="t0">住房公积金补扣(单位):</text>
 	<text class="t0">发放方式:</text>
@@ -108,6 +114,12 @@
 	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.sy_u}}</text>
 	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.gs_u}}</text>
 	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.zfgjj_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_yl_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_unemploy_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_medical_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_sy_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_gs_u}}</text>
+	<text class="t01" space="true" decode="{{true}}">&nbsp;￥{{gzb.k_zfgjj_u}}</text>
 	<text class="t01" space="true" decode="{{true}}">&nbsp;{{gzb.give_met}}</text>
 </view>
 </view>
