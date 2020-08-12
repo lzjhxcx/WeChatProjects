@@ -19,6 +19,7 @@
 	<view wx:else>请升级微信版本</view>
 </view>
 <view wx:else>
+<c-water></c-water>
 	<image class="background" src="../img/background.png"></image>
 	<view class="blank">
 		<view class="board1">
@@ -59,7 +60,7 @@
 			</navigator>
 		</block>
 	</view>
-	<image src="../img/bgp.gif" class="xhr" mode="aspectFit"></image>
+	<image src="../img/bgp.gif" class="xhr" mode="aspectFit" bindtap="hidefunctions"></image>
 	<view class="register">
 	<view wx:if="{{avatarUrl}}">
 	<image class="register2" src="{{avatarUrl}}"></image>
@@ -69,6 +70,18 @@
 	</view>
 	</view>
 	<view class="weui-footer weui-footer_fixed-bottom" style="position: fixed;bottom: 0rpx;justify-content: center;flex-direction: row;display: flex;align-items: center;width:750rpx;">
-		<view class="weui-footer_text" style="font-size:25rpx;color:white;">Copyright ©2020 by 信息部</view>
+		<view class="weui-footer_text" style="font-size:25rpx;color:white;" bindtap="popueopen">Copyright ©2020 by 信息部</view>
 	</view>
+	<l-popup show="{{use}}" content-align="center"  locked="{{true}}" animation="show">
+    <view class='pupop-content'>
+		<text>客服电话</text>
+		<button bindtap="jiangnan" style="width:450rpx;background-color:red">江南店</button>
+		<button bindtap="banshan" style="width:400rpx;background-color:blue">半山店</button>
+		<button bindtap="yangguang" style="width:350rpx;background-color:green">阳光店</button>
+		<button bindtap="yuquan" style="width:300rpx;background-color:yellow">玉泉店</button>
+		<button bindtap="huazhi" style="width:250rpx;background-color:gray">华芝店</button>
+		<button bindtap="fuguang" style="width:200rpx;background-color:white">福广店</button>
+      <button class='pupop-close' bindtap='popueclose' type="primary">关闭</button>
+    </view>
+</l-popup>
 </view>

@@ -1,7 +1,41 @@
 .container {
   background-color: #F2f2f2;
 }
+.weui-tabs-bar__wrp {
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+}
+.weui-tabs-swiper {
+  width: 100%;
+  height: 400rpx;
+}
+.tab-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  box-sizing: border-box;
+  padding: 20rpx;
+  /* background-color: gray; */
+}
+.item-title{
+  height: 20rpx;
+  /* background-color: red; */
+}
+.item-desc{
+  height: 200rpx;
+  /* background-color: chartreuse; */
+}
 
+.weui-tabs-bar__title {
+  margin: 0px 10px;
+}
+
+.tab-bar-title__selected {
+  font-size: 20px;
+  font-weight: bold;
+}
 /*轮播*/
 .swiper_box {
   /*width: 100%;*/

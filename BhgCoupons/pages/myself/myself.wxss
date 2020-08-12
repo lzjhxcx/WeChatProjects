@@ -155,12 +155,12 @@ z-index: 1;
 .coupon-left .t0{left: 10rpx; top: 10rpx;font-size: 30rpx;}
 .coupon-left .t1{left: 0; top: 90rpx}
 .coupon-left .t2{left: 30rpx; top: 50rpx; font-size: 80rpx; font-weight: bold }
-.coupon-left .t3{left: 150rpx; top: 40rpx; width: 300rpx; font-size: 30rpx;}
+.coupon-left .t3{left: 150rpx; top: 10rpx; width: 300rpx; font-size: 30rpx;}
 .coupon-left .t4{left: 10rpx; top:190rpx}
  
 .coupon-rig .t{text-align: center}
-.coupon-rig .t1{font-size: 40rpx; padding: 30rpx 0 10rpx 0;}
-.coupon-rig .t2{padding-top:20rpx}
+.coupon-rig .t1{font-size: 30rpx; padding: 10rpx 0 10rpx 0;}
+.coupon-rig .t2{padding-top:10rpx}
 .coupon-rig .t3 text{background: #fff(206, 17, 17); color: #333; border-radius: 7rpx; padding: 10rpx 40rpx;font-size: 5rpx;}
  
  
@@ -177,3 +177,13 @@ z-index: 1;
 .stamp05{background:radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, #D24161 30rpx);background-size:10rpx 10rpx;background-position:9rpx 3rpx; background: #f0229b}
 .stamp06{background:radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, #D24161 30rpx);background-size:10rpx 10rpx;background-position:9rpx 3rpx; background: #550fd8}
 .stamp07{background:radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, #D24161 30rpx);background-size:10rpx 10rpx;background-position:9rpx 3rpx; background: black}
+
+.pupop-content{
+    width: 750rpx;
+    height: 800rpx;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -9,12 +9,13 @@
     "navigationBarTitleText": "BHG优惠券",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap57.json",
-  "debug":true,
+  "debug": true,
   "useExtendedLib": {
     "kbone": true,
     "weui": true
-  }
-
-  
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "sitemapLocation": "sitemap11.json"
 }

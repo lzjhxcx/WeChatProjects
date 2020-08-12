@@ -6,32 +6,38 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
-		"newFeature": true,
-		"autoAudits": false,
+		"newFeature": false,
 		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.2",
+	"libVersion": "2.12.1",
 	"appid": "wxafd64b434b7987bb",
 	"projectname": "%E5%8C%97%E4%BA%AC%E5%8D%8E%E8%81%94%E7%94%B5%E5%AD%90%E5%88%B8",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
+	"scripts": {},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
@@ -49,7 +55,7 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
+			"current": -1,
 			"list": []
 		},
 		"gamePlugin": {
@@ -63,28 +69,6 @@
 					"id": -1,
 					"name": "pages/code/code",
 					"pathName": "pages/code/code",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/scan/scan",
-					"pathName": "pages/scan/scan",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/myself/myself",
-					"pathName": "pages/myself/myself",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/test/test",
-					"pathName": "pages/test/test",
-					"query": "",
 					"scene": null
 				}
 			]

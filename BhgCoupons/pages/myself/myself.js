@@ -9,7 +9,10 @@ Page({
     openid:'',
     firstloading:true,
     scanloading:false,
-    avatarUrl:''
+    avatarUrl:'',
+    hidefunction:0,
+    status:0,
+    use:false
   },
 
   onLoad: function () {
@@ -34,7 +37,7 @@ Page({
                   wx.request({
                     // 自行补上自己的 APPID 和 SECRET
                     // url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx8f17027ebf9027a8&secret=ffea254889db0e6d0a578eed45d48199&js_code=' + res.code + '&grant_type=authorization_code',
-                    url: 'https://www.lzjhxcx.club/Code_Appid.ashx?appid=wxafd64b434b7987bb&secret=00d855284be1ab5bd70c586c977abf9f&code=' + res.code + '&grant_type=authorization_code',
+                    url: 'https://www.lzjhxcx.club/Code_Appid?appid=wxafd64b434b7987bb&secret=00d855284be1ab5bd70c586c977abf9f&code=' + res.code + '&grant_type=authorization_code',
                     success: res => {
                       // 获取到用户的 openid
                       // console.log("用户的openid:" + res.data.openid);
@@ -90,7 +93,7 @@ Page({
                   wx.request({
                     // 自行补上自己的 APPID 和 SECRET
                     // url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx8f17027ebf9027a8&secret=ffea254889db0e6d0a578eed45d48199&js_code=' + res.code + '&grant_type=authorization_code',
-                    url: 'https://www.lzjhxcx.club/Code_Appid.ashx?appid=wxafd64b434b7987bb&secret=00d855284be1ab5bd70c586c977abf9f&code=' + res.code + '&grant_type=authorization_code',
+                    url: 'https://www.lzjhxcx.club/Code_Appid?appid=wxafd64b434b7987bb&secret=00d855284be1ab5bd70c586c977abf9f&code=' + res.code + '&grant_type=authorization_code',
                     success: res => {
                       // 获取到用户的 openid
                       // console.log("用户的openid:" + res.data.openid);
@@ -128,7 +131,7 @@ Page({
   usercode:function(){  //请求用户信息
     var that = this;
     wx.request({
-      url: 'https://www.lzjhxcx.club/Initialization.ashx',
+      url: 'https://www.lzjhxcx.club/Initialization',
       data: {
         open_id: that.data.openid
         },
@@ -140,8 +143,8 @@ Page({
         that.setData({
           number: []
         })
-        // console.log(res.data)
-        // console.log(res.data[0].result)
+        console.log(res.data)
+        console.log(res.data[0].result)
         if(res.data[0].result){
           wx.showToast({                      //提示是否有错误
             title: res.data[0].result,
@@ -205,7 +208,7 @@ Page({
           });
 
         wx.request({                         //传参请求条码信息
-          url: 'https://www.lzjhxcx.club/Create_coupon.ashx',
+          url: 'https://www.lzjhxcx.club/Create_coupon',
           data: {
             ticket_no:_this.data.qRCodeMsg,
             open_id: _this.data.openid
@@ -279,6 +282,37 @@ Page({
 
     })
   },
+  hidefunctions(){
+    console.log(this.data.hidefunction)
+    if(this.data.hidefunction<10){
+      this.data.hidefunction++;
+    }
+    else{
+      if(this.data.status==0){
+        console.log("开始播放了")
+        wx.playBackgroundAudio({
+          dataUrl: 'http://192.144.141.225:8888/down/XkTrwRr6MpFr',
+        })
+        this.data.status=1
+      }else{
+        console.log("开始暂停了")
+        wx.pauseBackgroundAudio({
+          success: (res) => {},
+        })
+        this.data.status=0
+      }
+    }
+  },
+  popueopen(){
+    this.setData({
+      use:true
+    })
+  },
+  popueclose(){
+    this.setData({
+      use:false
+    })
+  },
   //下拉刷新
   onPullDownRefresh: function () {
     this.usercode()
@@ -290,5 +324,35 @@ Page({
       title: '北京华联微信电子券',
       desc: '方便、快捷!',
     }
+  },
+  jiangnan(){
+    wx.makePhoneCall({
+      phoneNumber: '08125102083' 
+    })
+  },
+  banshan(){
+    wx.makePhoneCall({
+      phoneNumber: '08125197599' 
+    })
+  },
+  yangguang(){
+    wx.makePhoneCall({
+      phoneNumber: '08125102755' 
+    })
+  },
+  yuquan(){
+    wx.makePhoneCall({
+      phoneNumber: '08125102701' 
+    })
+  },
+  huazhi(){
+    wx.makePhoneCall({
+      phoneNumber: '08125177876' 
+    })
+  },
+  fuguang(){
+    wx.makePhoneCall({
+      phoneNumber: '08125177755' 
+    })
   },
 })

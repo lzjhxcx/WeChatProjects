@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <import src="../../template/item-template.wxml"/>
 <view class="container">
 
@@ -10,9 +9,27 @@
         <view class="line_y"></view>
         <text>服务范围</text>
     </view> 
-    <view class="section index-nav">
-       <template is="index_index_navs_tmpl" data="{{...index_index_navs_tmpl}}"/>
-    </view>
+<mp-tabs 
+    tabs="{{tabs}}" 
+    activeTab="{{activeTab}}" 
+    swiperClass="weui-tabs-swiper"
+    bindtabclick="onTabClick"
+    bindchange="onChange"
+    activeClass="tab-bar-title__selected"
+    class="tabs"
+  >
+    <block wx:for="{{tabs}}" wx:key="title">
+      <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick" >
+        <!-- <image class="image" src="{{item.img}}" mode="widthFix"></image> -->
+        <view class="item-title">
+          {{item.title2}}
+        </view>
+        <view class="item-desc">
+          {{item.desc}}
+        </view>
+      </view>
+    </block>
+  </mp-tabs>
     
     <view class="text">
         <view class="line_y"></view>

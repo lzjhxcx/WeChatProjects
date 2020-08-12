@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "l-popup": "../../lin-ui/popup/index",
+    "c-water":"../../component/water"
+  },
   "enablePullDownRefresh": true
 }                                              
