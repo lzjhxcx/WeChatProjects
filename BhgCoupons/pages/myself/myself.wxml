@@ -23,10 +23,9 @@
 	<image class="background" src="../img/background.png"></image>
 	<view class="blank">
 		<view class="board1">
-			<button class="scan" style="margin-top:20rpx;" bindtap="{{avatarUrl?'getQRCode':'isRegister'}}" plain="true" hover-class="button-hover">
+			<button class="scan" style="margin-top:20rpx;" bindtap="{{avatarUrl?'popueopen1':'isRegister'}}" plain="true" hover-class="button-hover">
 				<view class="text1"> 扫一扫 </view>
 			</button>
-
 		</view>
 		<text class="my">我的电子优惠券</text>
 		<open-data>文本</open-data>
@@ -34,7 +33,7 @@
 
 	<view class="coupon-list">
 		<block wx:for="{{number}}">
-			<navigator url='../code/code?code={{item.coupon_no}}&depict={{item.name}}' hover-class="navigator-hover">
+			<navigator url='../code/code?code={{item.coupon_no}}&depict={{item.name}}&introduce={{item.condition}}' hover-class="navigator-hover">
 				<view class="item stamp " style="background-color:{{item.color}}">
 					<!-- 左侧 -->
 					<view class="float-li t1">
@@ -81,7 +80,21 @@
 		<button bindtap="yuquan" style="width:300rpx;background-color:yellow">玉泉店</button>
 		<button bindtap="huazhi" style="width:250rpx;background-color:gray">华芝店</button>
 		<button bindtap="fuguang" style="width:200rpx;background-color:white">福广店</button>
-      <button class='pupop-close' bindtap='popueclose' type="primary">关闭</button>
+    <button class='pupop-close' bindtap='popueclose' type="primary">关闭</button>
     </view>
+</l-popup>
+	<l-popup show="{{scaner}}" content-align="center"  locked="{{true}}" animation="show">
+    <view class='pupop-content'>
+		<text style="color:white;font-size:50rpx">选 择 服 务</text>
+		<button style="width:400rpx; color:white;margin:30rpx;border:1rpx solid white" bindtap="getQRCode" plain="true">扫一扫领取优惠券</button>
+		  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+    <button style="width:400rpx;color:white;margin:30rpx;border:1rpx solid white" plain="true">进店即送活动</button>
+    </view>
+  </picker>
+    <button bindtap='popueclose1' style="width:400rpx;color:white;margin:30rpx;border:1rpx solid white" plain="true">关闭</button>
+
+
+</view>
 </l-popup>
 </view>

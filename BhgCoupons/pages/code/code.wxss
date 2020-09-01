@@ -55,7 +55,22 @@ page {
     justify-content: flex-end;
     align-items: center;
 }
+.qrcode1 {
+    /* height: 420rpx; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+    font-family: 黑体;
+}
 .qrcode > canvas {
     width: 420rpx;
     height: 420rpx;
+}
+.er{
+    display: block;
+}
+.er1{
+    display: none;
 }

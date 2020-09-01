@@ -12,7 +12,19 @@ Page({
     avatarUrl:'',
     hidefunction:0,
     status:0,
-    use:false
+    use:false,
+    scaner:false,
+    location:'',
+    array: ['江南路店', '半山康城店', '阳光家园店', '玉泉广场店','华芝御景城店','福广金城店'],
+    storename: [100122,100119,100123,100124,100125,100173]
+  },
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      location:this.data.storename[e.detail.value]
+    })
+    console.log(this.data.location)
+    this.jindianjisong()
   },
 
   onLoad: function () {
@@ -102,7 +114,7 @@ Page({
                         firstloading:false
                       })
                       console.log("用户的openid:" + that.data.openid);
-                      that.usercode()
+                        that.usercode()
                     }
                   });
                 }
@@ -122,43 +134,49 @@ Page({
       }
     });
   },
-
+ //页面切换刷新用户信息
   onShow(){
     if(this.data.firstloading==false && this.data.scanloading==false)
-    {this.usercode()  //页面切换刷新用户信息
+    {this.usercode()  
     }
   },
-  usercode:function(){  //请求用户信息
+   //从数据库请求用户的优惠券信息
+  usercode:function(){ 
     var that = this;
-    wx.request({
-      url: 'https://www.lzjhxcx.club/Initialization',
-      data: {
-        open_id: that.data.openid
-        },
-      header: {},
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        that.setData({
-          number: []
-        })
-        console.log(res.data)
-        console.log(res.data[0].result)
-        if(res.data[0].result){
-          wx.showToast({                      //提示是否有错误
-            title: res.data[0].result,
-            duration: 3000
+    if(that.data.openid!=""){
+      wx.request({
+        url: 'https://www.lzjhxcx.club/Initialization',
+        data: {
+          open_id: that.data.openid
+          },
+        header: {},
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function(res) {
+          that.setData({
+            number: []
           })
+          if(res.data!=""){
+          if(res.data[0].result){
+            console.log(res.data[0].result)
+          //提示错误信息
+            wx.showToast({                     
+              title: res.data[0].result,
+              duration: 3000
+            })
+          }
+          else{
+          that.setData({
+            number: res.data
+          })}
         }
-        else{
-        that.setData({
-          number: res.data
-        })}
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+        },
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
+
   },
   
 
@@ -182,7 +200,7 @@ Page({
         showCancel: false,
         confirmText: '返回授权',
         success: function (res) {
-          // 用户没有授权成功，不需要改变 isHide 的值
+      // 用户没有授权成功，不需要改变 isHide 的值
           if (res.confirm) {
             console.log('用户点击了“返回授权”');
           }
@@ -192,96 +210,76 @@ Page({
   },
   getQRCode: function () {
     var _this = this;
-    
-    wx.scanCode({                           //扫描API
+    //扫描API
+    wx.scanCode({                           
       success: function (res) {
-        if (res.result.length == 22 &        //初步筛选所扫条码是否符合条件
+        //初步筛选所扫条码是否符合条件
+        if (res.result.length == 22 &        
         res.result.substring(0, 6) == 100119 | 
         res.result.substring(0, 6) == 100122 | 
         res.result.substring(0, 6) == 100123 | 
         res.result.substring(0, 6) == 100124 | 
         res.result.substring(0, 6) == 100125 | 
         res.result.substring(0, 6) == 100173) {
-          console.log(res);   //输出回调信息
+          //输出回调信息
+          console.log(res);   
           _this.setData({
             qRCodeMsg: res.result
           });
-
-        wx.request({                         //传参请求条码信息
-          url: 'https://www.lzjhxcx.club/Create_coupon',
-          data: {
-            ticket_no:_this.data.qRCodeMsg,
-            open_id: _this.data.openid
-            },
-          header: {},
-          method: 'GET',
-          dataType: 'json',
-          responseType: 'text',
-          success: function(res) {
-            console.log(res.data)
-            _this.setData({
-              scanloading:true
-            })
-            wx.showToast({                      //提示是否有错误
-              title: res.data.result,
-              duration: 3000
-            })
-            _this.setData({
-              scanloading:false
-            })
-            _this.usercode()
-            // let list = _this.data.number;
-            // list.push(res.data);
-            // _this.setData({
-            //   number: list
-            // })
-          // if(res.data.pd==1){
-          //   wx.showToast({                      //提示是否扫描成功
-          //     title: '成功',
-          //     duration: 2000
-          //   })
-            // wx.navigateTo({                      //带参跳转到条码界面
-            //   url: '../code/code?code=' + res.data.qRCodeMsg,
-            //   success: function (res) { },
-            //   fail: function (res) { },
-            //   complete: function (res) { },
-            // })
-          // }else{
-          //   wx.showToast({                      //提示是否扫描成功
-          //     title: '不符合条件！',
-          //     duration: 2000
-          //   })
-          // }
-            
-          },
-          fail: function(res) {},
-          complete: function(res) {},
-        })
-          // let list = _this.data.number;   //将扫描到的数据保存到变量number中
-          // var rbg = { "name": "夜市优惠券", "money": "10", "condition": "消费满128元使用一张", "coupon_no": "6600020012", "start_time": "2020-06-28", "end_time": "2020-06-30" };
-          // rbg.coupon_no = res.result;
-          // list.push(rbg);
-          // _this.setData({
-          //   number: list
-          // })
-
-          // wx.navigateTo({                     //带参跳转到条码界面
-          //   url: '../code/code?code=' + _this.data.qRCodeMsg,
-          //   success: function (res) { },
-          //   fail: function (res) { },
-          //   complete: function (res) { },
-          // })
+        if(!_this.data.openid){
+          //提示网络卡
+          wx.showToast({                      
+            title: '网络慢,请重试',
+            duration: 3000
+          })
         }
-        else {
-          wx.showToast({                      //提示是否扫描成功
+        else{
+          //传参请求条码信息
+          wx.request({                         
+            url: 'https://www.lzjhxcx.club/Create_coupon',
+            data: {
+              ticket_no:_this.data.qRCodeMsg,
+              open_id: _this.data.openid
+              },
+            header: {},
+            method: 'GET',
+            dataType: 'json',
+            responseType: 'text',
+            success: function(res) {
+              console.log(res.data)
+              _this.setData({
+                scanloading:true
+              })
+              //提示是否有错误
+              wx.showToast({                      
+                title: res.data.result,
+                duration: 3000
+              })
+              _this.setData({
+                scanloading:false
+              })
+              //手动刷新请求用户优惠券
+              _this.usercode()
+            },
+            fail: function(res) {},
+            complete: function(res) {},
+          })
+        }
+        }else {
+          //提示是否扫描成功
+          wx.showToast({                      
             title: '小票有误！',
             duration: 2000
           })
         }
       }
-
+    })
+    //隐藏弹出层，回到主页面
+    _this.setData({
+      scaner:false
     })
   },
+ //隐藏功能，点击10次播放背景音乐
   hidefunctions(){
     console.log(this.data.hidefunction)
     if(this.data.hidefunction<10){
@@ -303,22 +301,37 @@ Page({
       }
     }
   },
+  //改变use值为true，显示底部弹出层
   popueopen(){
     this.setData({
       use:true
     })
   },
+  //改变use值为false，隐藏底部弹出层
   popueclose(){
     this.setData({
       use:false
     })
   },
-  //下拉刷新
-  onPullDownRefresh: function () {
-    this.usercode()
-    wx.stopPullDownRefresh()
+  //改变scaner值为true，显示顶部弹出层
+  popueopen1(){
+    this.setData({
+      scaner:true
+    })
   },
-  //分享
+  //改变scaner值为false，隐藏顶部弹出层
+  popueclose1(){
+    this.setData({
+      scaner:false
+    })
+  },
+  //用户手动下拉刷新，从数据库获取用于优惠券信息
+  onPullDownRefresh: function () {
+      this.usercode()
+      wx.stopPullDownRefresh()
+
+  },
+  //分享功能打开
  onShareAppMessage: function () {
     return {
       title: '北京华联微信电子券',
@@ -353,6 +366,43 @@ Page({
   fuguang(){
     wx.makePhoneCall({
       phoneNumber: '08125177755' 
+    })
+  },
+  //进店即送功能请求函数
+  jindianjisong(){
+    var _this=this
+    //传参请求条码信息
+    wx.request({                         
+      url: 'https://www.lzjhxcx.club/CustomerTicket',
+      data: {
+        open_id: _this.data.openid,
+        storename:_this.data.location
+        },
+      header: {},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res.data)
+        _this.setData({
+          scanloading:true  
+        })
+        //提示是否有错误
+        wx.showToast({                      
+          title: res.data.result,
+          duration: 3000
+        })
+        _this.setData({
+          scanloading:false
+        })
+        _this.usercode()
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+    //隐藏弹出层，返回主页面
+    _this.setData({
+      scaner:false
     })
   },
 })
